@@ -47,3 +47,8 @@ class BasePresenter extends Nette\Application\UI\Presenter
 ...
 {control encore-js, index}
 ```
+
+5 . Use latte macro anywhere you need.
+```
+{asset "build/images/logo.svg"}
+```
