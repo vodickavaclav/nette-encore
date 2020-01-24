@@ -14,13 +14,6 @@ extensions:
 		- vavo\EncoreLoader\EncoreLoaderExtensions
 ```
 
-1 . Add macro set into config.
-
-```config
-latte:
-	macros:
-		- vavo\EncoreLoader\macro\AssetMacroSet
-```
 2 . Define encore properties in config.
 
 ```config
