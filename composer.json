@@ -10,7 +10,9 @@
       "email": "vaclav.vodicka92@gmail.com"
     }
   ],
-
+  "autoload": {
+    "classmap": ["src/"]
+  },
   "require": {
     "latte/latte": "^2.6",
     "nette/application": "^3.0",

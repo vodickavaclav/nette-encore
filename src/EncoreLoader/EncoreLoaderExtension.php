@@ -14,9 +14,6 @@ class EncoreLoaderExtension extends \Nette\DI\CompilerExtension
 		$this->validateConfig($this->defaults);
 
 		$builder->addDefinition($this->prefix('encoreLoader'))
-			->setFactory(\vavo\EncoreLoader\EncoreLoader::class, $this->config);
-
-		$builder->addDefinition($this->prefix('encoreLoader'))
-			->setFactory(\vavo\EncoreLoader\EncoreLoaderTrait::class);
+			->setFactory(\vavo\EncoreLoader\EncoreLoaderFactory::class, $this->config);
 	}
 }
