@@ -26,7 +26,7 @@ class EncoreLoader extends Control
 
 	public static function getAsset(string $asset)
 	{
-		$path = __DIR__.'/../../../www'.self::$encoreConfig['outDir'].'manifest.json';
+		$path = self::$encoreConfig['outDir'].'manifest.json';
 		if (file_exists($path)) {
 			$content = json_decode(file_get_contents($path), true);
 			if (isset($content[$asset])) {
@@ -38,7 +38,7 @@ class EncoreLoader extends Control
 
 	public static function getEntryPoints()
 	{
-		$path = __DIR__.'/../../../www'.self::$encoreConfig['outDir'].'entrypoints.json';
+		$path = self::$encoreConfig['outDir'].'entrypoints.json';
 		if (file_exists($path)) {
 			$content = json_decode(file_get_contents($path), true);
 			if (!isset($content['entrypoints'])) {

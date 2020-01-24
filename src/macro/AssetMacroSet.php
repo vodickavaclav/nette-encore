@@ -1,5 +1,5 @@
 <?php
-namespace App\Components\EncoreLoader;
+namespace vavo\EncoreLoader\macro;
 
 use Latte;
 
