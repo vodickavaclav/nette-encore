@@ -6,6 +6,13 @@ Integration of  [symfony/webpack-encore-bundle](https://github.com/symfony/webpa
 composer require vavo/nette-encore
 ```
 ## Usage
+1 . Register extension.
+
+```config
+extensions:
+	encoreLoader:
+		- vavo\EncoreLoader\EncoreLoaderExtensions
+```
 
 1 . Add macro set into config.
 
@@ -17,10 +24,9 @@ latte:
 2 . Define encore properties in config.
 
 ```config
-parameters:
-	encore:
-		outDir: "%wwwDir%/build/"
-		defaultEntry: index
+encoreLoader:
+    outDir: "%wwwDir%/build/"
+    defaultEntry: index
 ```
 3 . Add trait into Presenter.
 
