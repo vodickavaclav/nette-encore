@@ -16,7 +16,6 @@
   "require": {
     "latte/latte": "^2.6",
     "nette/application": "^3.0",
-    "symfony/webpack-encore-bundle": "^1.7",
     "nette/di": "^3.0"
   }
 }

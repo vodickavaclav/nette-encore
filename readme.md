@@ -1,13 +1,14 @@
 # Nette Encore
-Integration of  [symfony/webpack-encore-bundle](https://github.com/symfony/webpack-encore-bundle) into Nette project.
+Macros and components for integration of Encore into Nette project. 
 
 ## Install
 ```bash
 composer require vavo/nette-encore
+yarn add @symfony/webpack-encore --dev
 ```
 ## Usage
 1 . Register extension.
-
+ 
 ```config
 extensions:
 	encoreLoader:
