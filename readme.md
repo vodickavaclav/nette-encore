@@ -1,6 +1,10 @@
 # Nette Encore
 Integration of  [symfony/webpack-encore-bundle](https://github.com/symfony/webpack-encore-bundle) into Nette project.
 
+## Install
+```bash
+composer require vavo/nette-encore
+```
 ## Usage
 
 1 . Add macro set into config.
