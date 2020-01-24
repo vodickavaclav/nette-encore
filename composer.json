@@ -1,0 +1,17 @@
+{
+  "name": "vodickavaclav/nette-encore",
+  "description": "Encore integration to Nette project",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Václav Vodička",
+      "email": "vaclav.vodicka92@gmail.com"
+    }
+  ],
+
+  "require": {
+    "latte/latte": "^2.6",
+    "nette/application": "^3.0"
+  }
+}
