@@ -11,7 +11,7 @@ composer require vavo/nette-encore
 ```config
 extensions:
 	encoreLoader:
-		- vavo\EncoreLoader\EncoreLoaderExtensions
+		- vavo\EncoreLoader\DI\EncoreLoaderExtensions
 ```
 
 2 . Define encore properties in config.

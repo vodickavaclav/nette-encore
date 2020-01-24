@@ -1,5 +1,5 @@
 <?php
-namespace vavo\EncoreLoader;
+namespace vavo\EncoreLoader\DI;
 
 use Nette\DI\Helpers;
 use Nette\PhpGenerator\PhpLiteral;
