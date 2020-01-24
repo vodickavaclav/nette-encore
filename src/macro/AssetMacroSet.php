@@ -19,6 +19,6 @@ class AssetMacroSet extends Latte\Macros\MacroSet
 	public function macroAsset(Latte\MacroNode $node, Latte\PhpWriter $writer): string
 	{
 
-		return $writer->write('echo %escape(%modify(\App\Components\EncoreLoader\EncoreLoader::getAsset(%node.args)))');
+		return $writer->write('echo %escape(%modify(vavo\EncoreLoader\EncoreLoader::getAsset(%node.args)))');
 	}
 }
