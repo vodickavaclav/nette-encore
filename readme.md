@@ -52,7 +52,3 @@ class BasePresenter extends Nette\Application\UI\Presenter
 ```
 {asset "build/images/logo.svg"}
 ```
-6 . Install Encore
-```
- yarn add @symfony/webpack-encore --dev
-```

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "noImplicitAny": false,
+    "declaration": false,
+    "strict": false,
+    "module": "esnext",
+    "sourceMap": true,
+    "jsx": "react",
+    "allowJs": true,
+    "noLib": false,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": "./",
+    "moduleResolution": "node"
+  },
+  "include": ["www"],
+  "exclude": ["node_modules"]
+}
+
