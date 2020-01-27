@@ -7,10 +7,9 @@ class JSLoader extends EncoreLoader
 {
 	const TYPE = 'js';
 
-
 	public function render($entry = null)
 	{
-		$this->template->files = $this->getFiles(self::TYPE, $entry);
+		$this->template->files = self::getFiles(self::TYPE, $entry);
 		$this->template->setFile(__DIR__ . '/JSLoader.latte');
 		$this->template->render();
 	}

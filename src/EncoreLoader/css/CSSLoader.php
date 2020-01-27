@@ -9,7 +9,7 @@ class CSSLoader extends EncoreLoader
 
 	public function render($entry = null)
 	{
-		$this->template->files = $this->getFiles(self::TYPE, $entry);
+		$this->template->files = self::getFiles(self::TYPE, $entry);
 		$this->template->setFile(__DIR__ . '/CSSLoader.latte');
 		$this->template->render();
 	}

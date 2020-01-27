@@ -49,12 +49,12 @@ class EncoreLoader extends Control
 		return [];
 	}
 
-	public function getFiles(string $type, $entry = null)
+	public static function getFiles(string $type, $entry = null)
 	{
 		$entryPoints = self::getEntryPoints();
 
 		if ($entry == null) {
-			$entry = $this->encoreConfig['defaultEntry'];
+			$entry = self::$encoreConfig['defaultEntry'];
 		}
 
 		if (!isset($entryPoints[$entry][$type])) {
