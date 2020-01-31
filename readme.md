@@ -11,8 +11,7 @@ yarn add @symfony/webpack-encore --dev
  
 ```config
 extensions:
-	encoreLoader:
-		- vavo\EncoreLoader\DI\EncoreLoaderExtensions
+	encoreLoader: vavo\EncoreLoader\DI\EncoreLoaderExtensions
 ```
 
 2 . Define encore properties in config.
