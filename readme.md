@@ -11,7 +11,7 @@ yarn add @symfony/webpack-encore --dev
  
 ```config
 extensions:
-	encoreLoader: vavo\EncoreLoader\DI\EncoreLoaderExtensions
+	encoreLoader: vavo\EncoreLoader\DI\EncoreLoaderExtension
 ```
 
 2 . Define encore properties in config.
@@ -49,5 +49,5 @@ class BasePresenter extends Nette\Application\UI\Presenter
 
 5 . Use latte macro anywhere you need.
 ```
-{asset "build/images/logo.svg"}
+<img src="{asset "build/images/logo.svg"}" />
 ```
