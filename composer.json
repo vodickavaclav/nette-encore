@@ -1,6 +1,5 @@
 {
   "name": "vavo/nette-encore",
-  "version": "1.2.0",
   "description": "Encore integration to Nette project",
   "minimum-stability": "stable",
   "license": "MIT",
