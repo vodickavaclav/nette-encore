@@ -51,3 +51,8 @@ class BasePresenter extends Nette\Application\UI\Presenter
 ```
 <img src="{asset "build/images/logo.svg"}" />
 ```
+
+6 . Use relative path to your image in css
+ ```
+ background-image: url('../images/background.jpg')
+ ```

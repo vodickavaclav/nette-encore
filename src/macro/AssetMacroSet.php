@@ -13,12 +13,12 @@ class AssetMacroSet extends Latte\Macros\MacroSet
 	public static function install(Latte\Compiler $compiler): void
 	{
 		$me = new static($compiler);
+
 		$me->addMacro('asset', [$me, 'macroAsset']);
 	}
 
 	public function macroAsset(Latte\MacroNode $node, Latte\PhpWriter $writer): string
 	{
-
-		return $writer->write('echo %escape(%modify(vavo\EncoreLoader\EncoreLoader::getAsset(%node.args)))');
+		return $writer->write('echo %escape(%modify($this->global->encoreLoaderService->getAsset(%node.args)))');
 	}
 }

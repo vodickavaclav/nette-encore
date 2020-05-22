@@ -2,17 +2,10 @@
 
 namespace vavo\EncoreLoader;
 
-class EncoreLoaderFactory
+interface EncoreLoaderFactory
 {
-	private $encoreConfig;
-
-	public function __construct($config)
-	{
-		$this->encoreConfig = $config;
-	}
-
-	public function create(): EncoreLoader
-	{
-		return new EncoreLoader($this->encoreConfig);
-	}
+	/**
+	 * @return EncoreLoaderComponent
+	 */
+	public function create(): EncoreLoaderComponent;
 }

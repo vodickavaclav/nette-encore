@@ -6,7 +6,7 @@ trait EncoreLoaderTrait
 	/** @var EncoreLoaderFactory @inject */
 	public $loader;
 
-	protected function createComponentEncore(): EncoreLoader
+	protected function createComponentEncore(): EncoreLoaderComponent
 	{
 		return $this->loader->create();
 	}
