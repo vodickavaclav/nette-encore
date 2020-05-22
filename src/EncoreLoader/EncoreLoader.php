@@ -14,6 +14,15 @@ class EncoreLoader extends Control
 		self::$encoreConfig = $encoreConfig;
 	}
 
+	public static function getEncoreConfig(string $config)
+	{
+		if(isset(self::$encoreConfig[$config])) {
+			return self::$encoreConfig[$config];
+		}
+
+		return null;
+	}
+
 	public function createComponentCss()
 	{
 		return new CSSLoader(self::$encoreConfig);
@@ -26,7 +35,7 @@ class EncoreLoader extends Control
 
 	public static function getAsset(string $asset)
 	{
-		$path = self::$encoreConfig['outDir'].'manifest.json';
+		$path = self::getEncoreConfig('outDir').'manifest.json';
 		if (file_exists($path)) {
 			$content = json_decode(file_get_contents($path), true);
 			if (isset($content[$asset])) {
@@ -38,7 +47,7 @@ class EncoreLoader extends Control
 
 	public static function getEntryPoints()
 	{
-		$path = self::$encoreConfig['outDir'].'entrypoints.json';
+		$path = self::getEncoreConfig('outDir').'entrypoints.json';
 		if (file_exists($path)) {
 			$content = json_decode(file_get_contents($path), true);
 			if (!isset($content['entrypoints'])) {
@@ -54,7 +63,7 @@ class EncoreLoader extends Control
 		$entryPoints = self::getEntryPoints();
 
 		if ($entry == null) {
-			$entry = self::$encoreConfig['defaultEntry'];
+			$entry = self::getEncoreConfig('defaultEntry');
 		}
 
 		if (!isset($entryPoints[$entry][$type])) {
