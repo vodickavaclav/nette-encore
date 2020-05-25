@@ -1,6 +1,9 @@
 {
   "name": "vavo/nette-encore",
+  "type": "library",
   "description": "Encore integration to Nette project",
+  "keywords": ["nette", "encore", "webpack"],
+  "homepage": "https://github.com/vodickavaclav/nette-encore",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
@@ -13,6 +16,8 @@
     "classmap": ["src/"]
   },
   "require": {
+    "ext-curl": "*",
+    "php": ">= 7.4",
     "latte/latte": "^2.6",
     "nette/application": "^3.0",
     "nette/di": "^3.0"
