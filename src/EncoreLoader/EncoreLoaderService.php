@@ -19,12 +19,18 @@ class EncoreLoaderService
 
 	public function getAsset(string $asset)
 	{
-		$path = $this->outDir.'manifest.json';
+		$path = realpath($this->outDir). DIRECTORY_SEPARATOR .'manifest.json';
 
 		if (file_exists($path)) {
 			$content = json_decode(file_get_contents($path), true);
 			if (isset($content[$asset])) {
 				return $content[$asset];
+			}
+
+			$foundAssets = preg_grep("/".preg_quote($asset, '/')."$/", array_keys($content));
+
+			if (count($foundAssets)) {
+				return $content[current($foundAssets)];
 			}
 		}
 		return "";
