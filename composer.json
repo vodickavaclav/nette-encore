@@ -18,9 +18,9 @@
   "require": {
     "ext-curl": "*",
     "php": ">= 7.4",
-    "latte/latte": "^2.6",
-    "nette/application": "^3.0",
-    "nette/di": "^3.0",
+    "latte/latte": "^2.4",
+    "nette/application": "^2.4",
+    "nette/di": "^2.4",
     "ext-json": "*"
   }
 }

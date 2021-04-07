@@ -1,5 +1,5 @@
 # Nette Encore
-Macros and components for integration of Encore into Nette project. 
+Macros and components for integration of Encore into Nette 2.4 project. 
 
 ## Install
 ```bash

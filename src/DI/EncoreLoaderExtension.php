@@ -12,31 +12,29 @@ use vavo\EncoreLoader\macro\AssetMacroSet;
 
 class EncoreLoaderExtension extends CompilerExtension
 {
-	public function getConfigSchema(): Schema
-	{
-		return Expect::structure([
-			'outDir' => Expect::string()->default('\build'),
-			'defaultEntry' => Expect::string()->default('index')
-		]);
-	}
+	private $defaults = [
+		'outDir' => '\build',
+		'defaultEntry' => 'index'
+	];
 
 
 	public function loadConfiguration()
 	{
+		$this->validateConfig($this->defaults);
+
 		$builder = $this->getContainerBuilder();
 
 		$encoreLoaderService = $builder->addDefinition($this->prefix('encoreLoaderService'))
 			->setFactory(EncoreLoaderService::class, [(array) $this->config]);
 
 		$builder->getDefinitionByType(ILatteFactory::class)
-			->getResultDefinition()
 			->addSetup('addProvider', ['name' => 'encoreLoaderService', 'value' => $encoreLoaderService])
 			->addSetup('?->onCompile[] = function ($engine) { ?::install( $engine->getCompiler()); }', [
 				'@self',
 				new PhpLiteral(AssetMacroSet::class)
 			]);
 
-		$builder->addFactoryDefinition($this->prefix('encoreLoaderFactory'))
-			->setImplement(EncoreLoaderFactory::class);
+		$builder->addDefinition($this->prefix('encoreLoaderFactory'))
+			->setFactory(EncoreLoaderFactory::class);
 	}
 }

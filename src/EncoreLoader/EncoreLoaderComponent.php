@@ -15,6 +15,7 @@ class EncoreLoaderComponent extends Control
 
 	public function __construct(EncoreLoaderService $encoreLoaderService)
 	{
+		parent::__construct();
 		$this->encoreLoaderService = $encoreLoaderService;
 	}
 
