@@ -35,6 +35,6 @@ class EncoreLoaderExtension extends CompilerExtension
 			]);
 
 		$builder->addDefinition($this->prefix('encoreLoaderFactory'))
-			->setFactory(EncoreLoaderFactory::class);
+			->setImplement(EncoreLoaderFactory::class);
 	}
 }
