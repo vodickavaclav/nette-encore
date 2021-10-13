@@ -11,7 +11,7 @@ class EncoreLoaderComponent extends Control
 	/**
 	 * @var EncoreLoaderService
 	 */
-	protected $encoreLoaderService;
+	protected EncoreLoaderService $encoreLoaderService;
 
 	public function __construct(EncoreLoaderService $encoreLoaderService)
 	{

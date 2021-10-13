@@ -22,7 +22,7 @@ class EncoreLoaderService
 		$path = realpath($this->outDir). DIRECTORY_SEPARATOR .'manifest.json';
 
 		if (file_exists($path)) {
-			$content = json_decode(file_get_contents($path), true);
+			$content = json_decode(file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
 			if (isset($content[$asset])) {
 				return $content[$asset];
 			}
@@ -40,7 +40,7 @@ class EncoreLoaderService
 	{
 		$path = $this->outDir.'entrypoints.json';
 		if (file_exists($path)) {
-			$content = json_decode(file_get_contents($path), true);
+			$content = json_decode(file_get_contents($path), true, 512, JSON_THROW_ON_ERROR);
 			if (!isset($content['entrypoints'])) {
 				return [];
 			}
@@ -49,11 +49,11 @@ class EncoreLoaderService
 		return [];
 	}
 
-	public function getFiles(string $type, $entry = null)
+	public function getFiles(string $type, string $entry = null)
 	{
 		$entryPoints = self::getEntryPoints();
 
-		if ($entry == null) {
+		if ($entry === null) {
 			$entry = $this->defaultEntry;
 		}
 
@@ -63,10 +63,7 @@ class EncoreLoaderService
 		return $entryPoints[$entry][$type];
 	}
 
-	/**
-	 * @param string $outDir
-	 */
-	public function setOutDir(mixed $outDir): void
+	public function setOutDir(string $outDir): void
 	{
 		$this->outDir = $outDir;
 	}
