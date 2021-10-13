@@ -4,7 +4,7 @@ namespace vavo\EncoreLoader;
 trait EncoreLoaderTrait
 {
 	/** @var EncoreLoaderFactory @inject */
-	public $loader;
+	public EncoreLoaderFactory $loader;
 
 	protected function createComponentEncore(): EncoreLoaderComponent
 	{

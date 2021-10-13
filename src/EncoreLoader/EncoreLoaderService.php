@@ -62,4 +62,12 @@ class EncoreLoaderService
 		}
 		return $entryPoints[$entry][$type];
 	}
+
+	/**
+	 * @param string $outDir
+	 */
+	public function setOutDir(mixed $outDir): void
+	{
+		$this->outDir = $outDir;
+	}
 }
