@@ -19,7 +19,7 @@
     "ext-curl": "*",
     "php": ">= 7.4",
     "latte/latte": "^2.6",
-    "nette/application": "^3.0",
+    "nette/application": "^3.0.6",
     "nette/di": "^3.0",
     "ext-json": "*"
   }
