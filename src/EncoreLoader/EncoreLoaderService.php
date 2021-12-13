@@ -11,6 +11,9 @@ class EncoreLoaderService
 	/** @var string */
 	private $defaultEntry;
 
+	/** @var string[] */
+	private $files = [];
+
 	public function __construct(array $encoreConfig)
 	{
 		$this->outDir = $encoreConfig['outDir'];
@@ -60,6 +63,25 @@ class EncoreLoaderService
 		if (!isset($entryPoints[$entry][$type])) {
 			return [];
 		}
-		return $entryPoints[$entry][$type];
+
+		return $this->checkDuplicity($entryPoints[$entry][$type]);
+	}
+
+	private function checkDuplicity(array $entryPoints)
+	{
+		foreach ($entryPoints as $key => $entryPoint) {
+			if (in_array($entryPoint, $this->files, true)) {
+				unset($entryPoints[$key]);
+			} else {
+				$this->files[] = $entryPoint;
+			}
+		}
+
+		return $entryPoints;
+	}
+
+	public function setOutDir(string $outDir): void
+	{
+		$this->outDir = $outDir;
 	}
 }
